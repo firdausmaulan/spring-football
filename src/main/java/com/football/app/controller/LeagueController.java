@@ -55,7 +55,7 @@ public class LeagueController {
 	}
 
 	@DeleteMapping("/{id}")
-	public String deleteBuku(@PathVariable(value = "id") Long id) {
+	public String deleteLeague(@PathVariable(value = "id") Long id) {
 		Optional<League> optional = repository.findById(id);
 		if (optional == null || optional.isEmpty()) {
 			return "id " + id + " not found";
@@ -69,7 +69,7 @@ public class LeagueController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<League> getBukuById(@PathVariable(value = "id") Long id) {
+	public ResponseEntity<League> getLeagueById(@PathVariable(value = "id") Long id) {
 		Optional<League> optional = repository.findById(id);
 		if (optional == null || optional.isEmpty()) {
 			return ResponseEntity.notFound().build();
